@@ -1,0 +1,2 @@
+class Epxense < ApplicationRecord
+end

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_01_190114) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_01_222323) do
+  create_table "epxenses", force: :cascade do |t|
+    t.string "expense_name"
+    t.float "expense_amount"
+    t.date "exp_date"
+    t.string "expenseType"
+    t.boolean "paid"
+    t.string "paidBy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "homes", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

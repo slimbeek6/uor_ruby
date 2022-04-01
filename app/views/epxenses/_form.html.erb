@@ -1,0 +1,47 @@
+<%= form_with(model: epxense) do |form| %>
+  <% if epxense.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(epxense.errors.count, "error") %> prohibited this epxense from being saved:</h2>
+
+      <ul>
+        <% epxense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :expense_name, style: "display: block" %>
+    <%= form.text_field :expense_name %>
+  </div>
+
+  <div>
+    <%= form.label :expense_amount, style: "display: block" %>
+    <%= form.text_field :expense_amount %>
+  </div>
+
+  <div>
+    <%= form.label :exp_date, style: "display: block" %>
+    <%= form.date_field :exp_date %>
+  </div>
+
+  <div>
+    <%= form.label :expenseType, style: "display: block" %>
+    <%= form.text_field :expenseType %>
+  </div>
+
+  <div>
+    <%= form.label :paid, style: "display: block" %>
+    <%= form.check_box :paid %>
+  </div>
+
+  <div>
+    <%= form.label :paidBy, style: "display: block" %>
+    <%= form.text_field :paidBy %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Epxenses</h1>
+
+<div id="epxenses">
+  <% @epxenses.each do |epxense| %>
+    <%= render epxense %>
+    <p>
+      <%= link_to "Show this epxense", epxense %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New epxense", new_epxense_path %>

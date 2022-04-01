@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @epxense %>
+
+<div>
+  <%= link_to "Edit this epxense", edit_epxense_path(@epxense) %> |
+  <%= link_to "Back to epxenses", epxenses_path %>
+
+  <%= button_to "Destroy this epxense", @epxense, method: :delete %>
+</div>
