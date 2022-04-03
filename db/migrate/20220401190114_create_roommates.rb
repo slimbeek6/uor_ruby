@@ -6,6 +6,7 @@ class CreateRoommates < ActiveRecord::Migration[7.0]
       t.string :phone
       t.string :emergency_contact
       t.string :emergency_phone
+      t.belongs_to :home, index: true
 
       t.timestamps
     end

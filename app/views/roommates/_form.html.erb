@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_name, style: "display: block" %>
-    <%= form.text_field :user_name %>
+  <div class="form-group">
+    <%= form.text_field :user_name, class: "form-control", placeholder: "Roommate Name" %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="form-group">
+    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+  <div class="form-group">
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone Number" %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.label :emergency_contact, style: "display: block" %>
-    <%= form.text_field :emergency_contact %>
+  <div class="form-group">
+    <%= form.text_field :emergency_contact, class:"form-control", placeholder:"Emergency Contact" %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.label :emergency_phone, style: "display: block" %>
-    <%= form.text_field :emergency_phone %>
+  <div class="form-group">
+    <%= form.text_field :emergency_phone, class:"form-control", placeholder:"Emergency Phone Number" %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.submit %>
+  <div class="Action" >
+    <%= form.submit :Submit, class:"btn btn-success", style:"width: 14rem" %>
   </div>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_01_222323) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_221150) do
   create_table "epxenses", force: :cascade do |t|
     t.string "expense_name"
     t.float "expense_amount"
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_01_222323) do
     t.string "paidBy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "home_id"
+    t.index ["home_id"], name: "index_epxenses_on_home_id"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -42,6 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_01_222323) do
     t.string "emergency_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "home_id"
+    t.index ["home_id"], name: "index_roommates_on_home_id"
   end
 
 end

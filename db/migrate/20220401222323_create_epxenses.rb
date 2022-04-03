@@ -7,6 +7,7 @@ class CreateEpxenses < ActiveRecord::Migration[7.0]
       t.string :expenseType
       t.boolean :paid
       t.string :paidBy
+      t.belongs_to :home, index: true
 
       t.timestamps
     end

@@ -10,21 +10,26 @@
       <th>Phone</th>
       <th>Emergency Contact</th>
       <th>Emergency Phone</th>
+      <th>Home ID</th>
     </tr>
   </thead>
 
   <tbody>
     <% @roommates.each do |roommate| %>
+      <% if roommate.home_id == current_home.id %>
       <tr>
         <td><%= link_to roommate.user_name, roommate %></td>
         <td><%= roommate.email %></td>
         <td><%= roommate.phone %></td>
         <td><%= roommate.emergency_contact %></td>
         <td><%= roommate.emergency_phone %></td>
+        <td><%= roommate.home_id %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
 <br/>
-  <%= button_to "New roommate", new_roommate_path, class:"btn btn-primary" %>
-
+<button class="btn btn-primary">
+  <%= link_to "New roommate", new_roommate_path, class:"btn btn-primary" %>
+</button>
