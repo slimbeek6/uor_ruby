@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_223148) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_223834) do
   create_table "chores", force: :cascade do |t|
     t.string "name"
     t.string "assigned_to"
@@ -33,6 +33,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_223148) do
     t.datetime "updated_at", null: false
     t.integer "home_id"
     t.index ["home_id"], name: "index_epxenses_on_home_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "home_id"
+    t.index ["home_id"], name: "index_events_on_home_id"
   end
 
   create_table "homes", force: :cascade do |t|
