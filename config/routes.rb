@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chores
   resources :epxenses
   resources :roommates
   devise_for :homes

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_221150) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_223148) do
+  create_table "chores", force: :cascade do |t|
+    t.string "name"
+    t.string "assigned_to"
+    t.date "due_date"
+    t.boolean "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "home_id"
+    t.index ["home_id"], name: "index_chores_on_home_id"
+  end
+
   create_table "epxenses", force: :cascade do |t|
     t.string "expense_name"
     t.float "expense_amount"

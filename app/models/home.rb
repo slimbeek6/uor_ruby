@@ -6,4 +6,5 @@ class Home < ApplicationRecord
 
   has_many :roommates, dependent: :destroy
   has_many :epxenses, dependent: :destroy
+  has_many :chores, dependent: :destroy
 end
