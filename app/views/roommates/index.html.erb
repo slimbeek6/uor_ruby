@@ -2,13 +2,29 @@
 
 <h1>Roommates</h1>
 
-<div id="roommates">
-  <% @roommates.each do |roommate| %>
-    <%= render roommate %>
-    <p>
-      <%= link_to "Show this roommate", roommate %>
-    </p>
-  <% end %>
-</div>
+<table id="roommates" class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Emergency Contact</th>
+      <th>Emergency Phone</th>
+    </tr>
+  </thead>
 
-<%= link_to "New roommate", new_roommate_path %>
+  <tbody>
+    <% @roommates.each do |roommate| %>
+      <tr>
+        <td><%= link_to roommate.user_name, roommate %></td>
+        <td><%= roommate.email %></td>
+        <td><%= roommate.phone %></td>
+        <td><%= roommate.emergency_contact %></td>
+        <td><%= roommate.emergency_phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+  <%= button_to "New roommate", new_roommate_path, class:"btn btn-primary" %>
+
