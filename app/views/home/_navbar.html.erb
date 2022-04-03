@@ -9,8 +9,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <% if home_signed_in? %>
+                    <li class="nav-item"><%= link_to 'Dashboard', epxenses_path, class:"nav-link" %></li>
+                    <li class="nav-item"><%= link_to 'Budget', epxenses_path, class:"nav-link" %></li>
+                    <li class="nav-item"><%= link_to 'Calendar', edit_home_registration_path, class:"nav-link" %></li>
+                    <li class="nav-item"><%= link_to 'Chores', edit_home_registration_path, class:"nav-link" %></li>
+                    <li class="nav-item"><%= link_to 'Roommates', roommates_path, class:"nav-link" %></li>
                     <li class="nav-item"><%= link_to 'Edit Profile', edit_home_registration_path, class:"nav-link" %></li>
-                    
                 </ul>
 
                 <div><%= button_to 'Sign Out', destroy_home_session_path, method: :delete, class:"btn btn-secondary" %></div>
