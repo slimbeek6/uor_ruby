@@ -1,8 +1,13 @@
 class EpxensesController < ApplicationController
-  before_action :set_epxense, only: %i[ show edit update destroy ]
+  before_action :set_epxense, only: %i[ show edit update destroy table ]
 
   # GET /epxenses or /epxenses.json
   def index
+    @epxenses = Epxense.all
+  end
+
+  # GET /epxenses/table
+  def table
     @epxenses = Epxense.all
   end
 

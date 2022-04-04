@@ -2,13 +2,36 @@
 
 <h1>Chores</h1>
 
-<div id="chores">
-  <% @chores.each do |chore| %>
-    <%= render chore %>
-    <p>
-      <%= link_to "Show this chore", chore %>
-    </p>
-  <% end %>
-</div>
+<table id="chores" class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Chore Name</th>
+      <th>Assigned To</th>
+      <th>Due Date</th>
+      <th>Completed?</th>
+    </tr>
+  </thead>
 
-<%= link_to "New chore", new_chore_path %>
+  <tbody>
+  <% @chores.each do |chore| %>
+    <% if chore.home_id == current_home.id %>
+    <tr>
+      <% if chore.completed == false%>
+        <td><%= link_to chore.name, chore %></td>
+        <td><%= chore.assigned_to %></td>
+        <td><%= chore.due_date %></td>
+        <td><%= button_to "Complete", edit_chore_path, class:"btn btn-alert" %></td>
+      <% else %>
+        <td style="text-decoration: line-through"><%= link_to chore.name, chore %></td>
+        <td style="text-decoration: line-through"><%= chore.assigned_to %></td>
+        <td style="text-decoration: line-through"><%= chore.due_date %></td>
+        <td>Complete!</td>
+      <% end %>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
+<br/>
+<button class="btn btn-primary">
+  <%= link_to "New chore", new_chore_path, class:"btn btn-primary" %>
+</button>

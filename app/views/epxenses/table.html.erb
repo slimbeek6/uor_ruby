@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Expenses</h1>
+
+<table id="epxenses" class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Expense Name</th>
+      <th>Expense Amount</th>
+      <th>Due Date</th>
+      <th>Expense Type</th>
+      <th>Paid?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @epxenses.each do |epxense| %>
+    <% if epxense.home_id == current_home.id %>
+    <tr>
+      <% if epxense.paid == false%>
+        <td><%= link_to epxense.expense_name, epxense %></td>
+        <td><%= epxense.expense_amount %></td>
+        <td><%= epxense.exp_date %></td>
+        <td><%= epxense.expenseType %></td>
+        <td><%= button_to "Pay", edit_epxense_path, class:"btn btn-alert" %></td>
+      <% else %>
+        <td style="text-decoration: line-through"><%= link_to epxense.expense_name, epxense %></td>
+        <td style="text-decoration: line-through"><%= epxense.expense_amount %></td>
+        <td style="text-decoration: line-through"><%= epxense.exp_date %></td>
+        <td style="text-decoration: line-through"><%= epxense.expenseType %></td>
+        <td>Paid!</td>
+      <% end %>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
+<br/>
+<button class="btn btn-primary">
+  <%= link_to "New Expense", new_epxense_path, class:"btn btn-primary" %>
+</button>

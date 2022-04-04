@@ -11,27 +11,25 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.text_field :name, class:"form-control", placeholder:"Chore Name" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :assigned_to, class:"form-control", placeholder:"Assigned Roommate" %>
+  </div>
+  <br/>
+  <div class="form-group">
+  <%= form.label :Due_Date, style: "display: block" %>  
+  <%= form.date_field :due_date, class:"form-control" %>
   </div>
 
   <div>
-    <%= form.label :assigned_to, style: "display: block" %>
-    <%= form.text_field :assigned_to %>
-  </div>
-
-  <div>
-    <%= form.label :due_date, style: "display: block" %>
-    <%= form.date_field :due_date %>
-  </div>
-
-  <div>
-    <%= form.label :completed, style: "display: block" %>
+    <%= form.label :Completed?, style: "display: block" %>
     <%= form.check_box :completed %>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <br/>
+  <div class="Action">
+    <%= form.submit :Submit, class:"btn btn-success", style:"width: 14rem"%>
   </div>
 <% end %>
