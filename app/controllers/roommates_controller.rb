@@ -65,6 +65,6 @@ class RoommatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def roommate_params
-      params.require(:roommate).permit(:user_name, :email, :phone, :emergency_contact, :emergency_phone)
+      params.require(:roommate).permit(:user_name, :email, :phone, :emergency_contact, :emergency_phone, :home_id)
     end
 end

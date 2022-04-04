@@ -33,6 +33,7 @@
 
   <div class="form-group">
     <%= form.text_field :emergency_phone, class:"form-control", placeholder:"Emergency Phone Number" %>
+    <%= form.number_field :home_id, id: :roommate_home_id, value: current_home.id, type: "hidden"  %>
   </div>
   <br/>
 

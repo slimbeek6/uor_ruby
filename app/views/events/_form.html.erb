@@ -18,6 +18,7 @@
   <div class="form-group">
     <%= form.label :Event_date, style: "display: block" %>
     <%= form.date_field :date, class:"form-control" %>
+    <%= form.number_field :home_id, id: :event_home_id, value: current_home.id, type: "hidden"  %>
   </div>
   <br/>
   <div class="Action">

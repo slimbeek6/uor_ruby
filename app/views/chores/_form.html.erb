@@ -27,6 +27,7 @@
   <div>
     <%= form.label :Completed?, style: "display: block" %>
     <%= form.check_box :completed %>
+    <%= form.number_field :home_id, id: :chore_home_id, value: current_home.id, type: "hidden"  %>
   </div>
   <br/>
   <div class="Action">
