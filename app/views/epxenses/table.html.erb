@@ -22,7 +22,7 @@
         <td><%= epxense.expense_amount %></td>
         <td><%= epxense.exp_date %></td>
         <td><%= epxense.expenseType %></td>
-        <td><%= button_to "Pay", edit_epxense_path, class:"btn btn-alert" %></td>
+        <td>Unpaid</td>
       <% else %>
         <td style="text-decoration: line-through"><%= link_to epxense.expense_name, epxense %></td>
         <td style="text-decoration: line-through"><%= epxense.expense_amount %></td>

@@ -1,12 +1,11 @@
 class EpxensesController < ApplicationController
-  before_action :set_epxense, only: %i[ show edit update destroy table ]
+  before_action :set_epxense, only: %i[ show edit update destroy ], except: [:table, :index, :create]
 
   # GET /epxenses or /epxenses.json
   def index
     @epxenses = Epxense.all
   end
 
-  # GET /epxenses/table
   def table
     @epxenses = Epxense.all
   end
@@ -70,6 +69,6 @@ class EpxensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def epxense_params
-      params.require(:epxense).permit(:expense_name, :expense_amount, :exp_date, :expenseType, :paid, :paidBy)
+      params.require(:epxense).permit(:expense_name, :expense_amount, :exp_date, :expenseType, :paid, :paidBy, :home_id)
     end
 end

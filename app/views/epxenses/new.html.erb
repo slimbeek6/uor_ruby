@@ -3,9 +3,12 @@
   <div class="card col-8" style="padding-bottom: 1rem">
     <h2 class="card-header" style="text-align: center; margin-bottom: 1rem">Add a New Expense</h2>
 
-<%= render "form", epxense: @epxense %>
-<br/>
+    <%= render "form", epxense: @epxense %>
+    <br/>
 
-<button class="btn btn-secondary" style="width: 14rem">
-  <%= link_to "Back to Budget", epxenses_path, class:"btn btn-secondary" %>
+    <button class="btn btn-secondary" style="width: 14rem">
+      <%= link_to "Back to Budget", epxenses_path, class:"btn btn-secondary" %>
+    </button>
+  </div>
+  
 </div>

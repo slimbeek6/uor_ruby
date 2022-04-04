@@ -24,7 +24,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.text_field :expenseType, class:"form-control", placeholder:"Due Date" %>
+    <%= form.text_field :expenseType, class:"form-control", placeholder:"Expense Type" %>
   </div>
 
   <div>
@@ -34,9 +34,14 @@
 
   <div class="form-group">
     <%= form.text_field :paidBy, class:"form-control", placeholder:"Paid By" %>
+    <%= form.number_field :home_id, id: :epxense_home_id, value: current_home.id, type: "hidden"  %>
   </div>
+
+
   <br/>
   <div class="Action">
     <%= form.submit :Submit, class:"btn btn-success", style:"width: 14rem" %>
   </div>
+
+
 <% end %>
