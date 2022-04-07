@@ -11,19 +11,21 @@
     </header>
 
     <div class="row">
-        <div class="card col-6">
-            <h4 class="card-header" style="text-align: center">Calendar</h4>
+        <div class="col-1"> </div>
+        <div class="card col-5" style="margin: 1rem">
+            <h4 class="card-header" style="text-align: center"><%= link_to "Calendar", events_path %></h4>
         </div>
         
-        <div class="card col-6">
-            <h4 class="card-header" style="text-align: center">Budget</h4>
+        <div class="card col-5" style="margin: 1rem">
+            <h4 class="card-header" style="text-align: center"><%= link_to "Budget", epxenses_path %></h4>
+            <div class="card-body"><%= pie_chart Epxense.group(:expenseType).sum(:expense_amount), label: "Value", prefix: "$", thousands: ","  %></div>
         </div>
     </div>
-
+    
     <div class="row">
         <div class="col-2"></div>
-        <div class="card col-8">
-            <h4 class="card-header" style="text-align: center">Roommates</h4>
+        <div class="card col-8" style="margin: 1rem 2rem">
+            <h4 class="card-header" style="text-align: center"><%= link_to "Roommates", roommates_path %></h4>
             <div id="roommates" class="card-body">
                 <table id="roommates" class="table table-striped table-bordered table-hover">
                     <thead class="table-dark">
