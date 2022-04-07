@@ -3,12 +3,12 @@
 <h1 class="title" style="text-align: center">Budget</h1>
 <div class="row">
   <div class="card col-6">
-    <h3 class="card-header" style="text-align: center">Insert Charts Here</h3>
-    <div class="card-body">Chart</div>
+    <h3 class="card-header" style="text-align: center">Current Expenses by Type</h3>
+    <div class="card-body"><%= pie_chart Epxense.group(:expenseType).sum(:expense_amount), label: "Value", prefix: "$", thousands: ","  %></div>
   </div>
   <div class="card col-6">
-    <h3 class="card-header" style="text-align: center">Insert Charts Here</h3>
-    <div class="card-body">Chart</div>
+    <h3 class="card-header" style="text-align: center">Expenses by Payment Status</h3>
+    <div class="card-body"><%= pie_chart Epxense.group(:paid).sum(:expense_amount), label: "Value", prefix: "$", thousands: "," %></div>
   </div>
 </div>
 
@@ -22,10 +22,10 @@
       <thead class="table-dark">
         <tr>
           <th>Expense Name</th>
-          <th>Expense Amount</th>
-          <th>Due Date</th>
-          <th>Expense Type</th>
-          <th>Paid?</th>
+          <th style="text-align: center">Expense Amount</th>
+          <th style="text-align: center">Due Date</th>
+          <th style="text-align: center">Expense Type</th>
+          <th style="text-align: center">Paid?</th>
         </tr>
       </thead>
 
@@ -35,16 +35,16 @@
         <tr>
           <% if epxense.paid == false%>
             <td><%= link_to epxense.expense_name, epxense %></td>
-            <td><span><p>$</p></span><%= epxense.expense_amount %></td>
-            <td><%= epxense.exp_date %></td>
-            <td><%= epxense.expenseType %></td>
-            <td>Unpaid</td>
+            <td style="text-align: center"><%= number_to_currency(epxense.expense_amount) %></td>
+            <td style="text-align: center"><%= epxense.exp_date %></td>
+            <td style="text-align: center"><%= epxense.expenseType %></td>
+            <td style="text-align: center">Unpaid</td>
           <% else %>
             <td style="text-decoration: line-through"><%= link_to epxense.expense_name, epxense %></td>
-            <td style="text-decoration: line-through"><%= epxense.expense_amount %></td>
-            <td style="text-decoration: line-through"><%= epxense.exp_date %></td>
-            <td style="text-decoration: line-through"><%= epxense.expenseType %></td>
-            <td>Paid!</td>
+            <td style="text-decoration: line-through; text-align: center"><%= number_to_currency(epxense.expense_amount) %></td>
+            <td style="text-decoration: line-through; text-align: center"><%= epxense.exp_date %></td>
+            <td style="text-decoration: line-through; text-align: center"><%= epxense.expenseType %></td>
+            <td style="text-align: center">Paid!</td>
           <% end %>
         </tr>
         <% end %>
