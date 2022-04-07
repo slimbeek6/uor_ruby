@@ -35,7 +35,7 @@
         <tr>
           <% if epxense.paid == false%>
             <td><%= link_to epxense.expense_name, epxense %></td>
-            <td><%= epxense.expense_amount %></td>
+            <td><span><p>$</p></span><%= epxense.expense_amount %></td>
             <td><%= epxense.exp_date %></td>
             <td><%= epxense.expenseType %></td>
             <td>Unpaid</td>
