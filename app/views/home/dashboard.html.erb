@@ -25,7 +25,33 @@
         <div class="card col-8">
             <h4 class="card-header" style="text-align: center">Roommates</h4>
             <div id="roommates" class="card-body">
+                <table id="roommates" class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Emergency Contact</th>
+                            <th>Emergency Phone</th>
+                            <th>Home ID</th>
+                        </tr>
+                    </thead>
                 
+                    <tbody>
+                        <% @roommates.each do |roommate| %>
+                            <% if roommate.home_id == current_home.id %>
+                                <tr>
+                                    <td><%= link_to roommate.user_name, roommate %></td>
+                                    <td><%= roommate.email %></td>
+                                    <td><%= roommate.phone %></td>
+                                    <td><%= roommate.emergency_contact %></td>
+                                    <td><%= roommate.emergency_phone %></td>
+                                    <td><%= roommate.home_id %></td>
+                                </tr>
+                            <% end %>
+                        <% end %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
