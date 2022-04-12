@@ -1,16 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="title" style="text-align: center">Calendar</h1>
+
 <div class="row">
   <div class="col-1"></div>
   <div class="card col-10">
-    <h3 class="card-header" style="text-align: center">Insert Calendar Here</h3>
+    <h3 class="card-header" style="text-align: center">House Calendar</h3>
     <div class="card-body" style="text-align: center">
       <%= month_calendar(events: @events, attribute: :date) do |date, events| %>
-        <div style="color: red; text-size: small" ><%= date %></div>
+        <div style="color: red; font-size: 10px" ><%= date %></div>
         <% events.each do |event| %>
           <div>
-            <%= event.name %>
+            <%= link_to event.name, event %>
           </div>
         <% end %>
       <% end %>
