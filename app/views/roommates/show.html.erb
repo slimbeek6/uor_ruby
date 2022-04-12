@@ -1,10 +1,13 @@
 <p style="color: green"><%= notice %></p>
+<div class="row">
+  <div class="card">
+  <%= render @roommate %>
 
-<%= render @roommate %>
+  <div>
+    <%= link_to "Edit this roommate", edit_roommate_path(@roommate) %> |
+    <%= link_to "Back to roommates", roommates_path %>
 
-<div>
-  <%= link_to "Edit this roommate", edit_roommate_path(@roommate) %> |
-  <%= link_to "Back to roommates", roommates_path %>
-
-  <%= button_to "Destroy this roommate", @roommate, method: :delete %>
+    <%= button_to "Destroy this roommate", @roommate, method: :delete %>
+  </div>
+  </div>
 </div>
