@@ -20,7 +20,7 @@
         <td><%= link_to chore.name, chore %></td>
         <td><%= chore.assigned_to %></td>
         <td><%= chore.due_date %></td>
-        <td><%= button_to "Complete", edit_chore_path, class:"btn btn-alert" %></td>
+        <td><%= link_to "Complete", edit_chore_path(chore) %></td>
       <% else %>
         <td style="text-decoration: line-through"><%= link_to chore.name, chore %></td>
         <td style="text-decoration: line-through"><%= chore.assigned_to %></td>

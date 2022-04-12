@@ -61,6 +61,7 @@ group :development do
   gem "web-console"
   gem "sqlite3", "~> 1.4"
   gem 'chartkick', '~> 4.1', '>= 4.1.3'
+  gem "simple_calendar", "~> 2.4"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
