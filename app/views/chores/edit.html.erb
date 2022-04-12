@@ -1,10 +1,13 @@
-<h1>Editing chore</h1>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="card col-8" style="padding-bottom: 1rem">
+    <h2 class="card-header" style="text-align: center; margin-bottom: 1rem">Edit Chore</h2>
+    <%= render "form", chore: @chore %>
 
-<%= render "form", chore: @chore %>
-
-<br>
-
-<div>
-  <%= link_to "Show this chore", @chore %> |
-  <%= link_to "Back to chores", chores_path %>
+    <br/>
+    <div>
+      <%= link_to "Back to chores", chores_path, class:"btn btn-secondary" %>
+    </div>
+  </div>
 </div>
+  
