@@ -1,7 +1,6 @@
-# README
+# Under One Roof (Ruby on Rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Under One Roof app was created to provide roommates with the ability to share a single location to track shared calendars, expenses, and events for their shared home. 
 
 Things you may want to cover:
 
